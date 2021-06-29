@@ -1,5 +1,5 @@
 ﻿using System;
-// using Person.Model;
+using ConsoleApp1TodoIt.Model;
 
 
 namespace ConsoleApp1TodoIt
@@ -8,7 +8,7 @@ namespace ConsoleApp1TodoIt
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Person person1 = new Person("Magnus", "Ivarson");
         }
 
 
