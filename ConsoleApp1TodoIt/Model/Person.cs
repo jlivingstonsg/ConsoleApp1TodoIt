@@ -2,46 +2,51 @@
 using System.Collections.Generic;
 using System.Text;
 
+
+
 namespace ConsoleApp1TodoIt.Model
 {
     public class Person
     {
-        readonly int personId;
-        Person(int personId)
-        {
-            this.personId = personId;
-        }
+        static int personId;
         string firstName;
         string lastName;
-    }
-
-
-    public string FirstName
-    {
-        get { return firstName; }
-        set
+        public Person(string firstName, string lastName)
         {
-            if (string.IsNullOrWhiteSpace(value))
+            //Initializing/creating object.
+            personId++;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+        }
+        public string FirstName
+        {
+            get { return firstName; }
+            set
             {
-                throw new ArgumentException("Empty or only whitespace is not allowed.");
-            }
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Empty or only whitespace is not allowed.");
+                }
 
-            firstName = value;
+                firstName = value;
+            }
+        }
+        public string LastName
+        {
+            get { return lastName; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Empty or only whitespace is not allowed.");
+                }
+
+                lastName = value;
+            }
         }
     }
-    public string LastName
-    {
-        get { return lastName; }
-        set
-        {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentException("Empty or only whitespace is not allowed.");
-            }
 
-            lastName = value;
-        }
-    }
+
 
 
 
