@@ -6,10 +6,15 @@ namespace ConsoleApp1TodoIt.Model
 {
     public class Person
     {
-        int personId;
+        readonly int personId;
+        Person(int personId)
+        {
+            this.personId = personId;
+        }
         string firstName;
         string lastName;
     }
+
 
     public string FirstName
     {

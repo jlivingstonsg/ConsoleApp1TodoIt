@@ -1,5 +1,5 @@
 ﻿using System;
-using Person.Model;
+// using Person.Model;
 
 
 namespace ConsoleApp1TodoIt
