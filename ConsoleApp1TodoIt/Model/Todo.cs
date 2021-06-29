@@ -6,7 +6,7 @@ namespace ConsoleApp1TodoIt.Model
 {
     public class Todo
     {
-        readonly static int todoId;
+        readonly  int todoId;
         string description;
         bool done;
         Person assignee;
@@ -14,8 +14,8 @@ namespace ConsoleApp1TodoIt.Model
         public Todo(int todoId, string description)
         {
             //Initializing/creating object.
-            this.TodoId = todoId;
-            this.Description = description;
+            this.todoId = todoId;
+            this.description = description;
         }
 
     }
