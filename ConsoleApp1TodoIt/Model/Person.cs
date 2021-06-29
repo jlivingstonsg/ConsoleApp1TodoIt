@@ -8,13 +8,12 @@ namespace ConsoleApp1TodoIt.Model
 {
     public class Person
     {
-        static int personId;
+        readonly static int personId;
         string firstName;
         string lastName;
         public Person(string firstName, string lastName)
         {
             //Initializing/creating object.
-            personId++;
             this.FirstName = firstName;
             this.LastName = lastName;
         }
