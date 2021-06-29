@@ -1,4 +1,6 @@
 ﻿using System;
+using Person.Model;
+
 
 namespace ConsoleApp1TodoIt
 {
@@ -8,5 +10,7 @@ namespace ConsoleApp1TodoIt
         {
             Console.WriteLine("Hello World!");
         }
+
+
     }
 }
