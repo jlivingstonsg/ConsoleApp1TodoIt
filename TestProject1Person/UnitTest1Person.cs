@@ -7,13 +7,13 @@ namespace TestProject1Person
     public class PersonTest
     {
         [Theory]
-        [InlineData(null, null)]
-        public void NullTest(string Fname, string Lname)
+        [InlineData(1, null, null)]
+        public void NullTest(int ID, string Fname, string Lname)
         {
             try
             {
-                Person person1 = new Person(Fname, Lname);
-                Assert.Equal(Fname, person1.FirstName);
+                Person p1 = new Person(ID, Fname, Lname);
+                //Assert.Equal(Fname, p1.FirstName);
             }
             catch (ArgumentException ex)
             {
@@ -21,12 +21,12 @@ namespace TestProject1Person
             }
         }
         [Theory]
-        [InlineData("Lars", "Persson")]
-        public void NormalTest(string Fname, string Lname)
+        [InlineData(1, "Magnus", "Ivarsson")]
+        public void NormalTest(int ID, string Fname, string Lname)
         {
-            Person person1 = new Person(Fname, Lname);
-            Assert.Equal("Lars", person1.FirstName);
-            Assert.Equal("Persson", person1.LastName);
+            Person p1 = new Person(ID, Fname, Lname);
+            Assert.Equal("Magnus", p1.FirstName);
+            Assert.Equal("Ivarsson", p1.LastName);
         }
     }
 }

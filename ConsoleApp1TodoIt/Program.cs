@@ -8,7 +8,7 @@ namespace ConsoleApp1TodoIt
     {
         static void Main(string[] args)
         {
-            Person person1 = new Person("Magnus", "Ivarson");
+            Person person1 = new Person(1, "Magnus", "Ivarson");
         }
 
 

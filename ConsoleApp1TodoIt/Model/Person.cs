@@ -6,15 +6,25 @@ namespace ConsoleApp1TodoIt.Model
 {
     public class Person
     {
-        readonly static int personId;
+        readonly int personId;
         string firstName;
         string lastName;
-        public Person(string firstName, string lastName)
+        public Person(int pID, string firstName, string lastName)//8d.
         {
             //Initializing/creating object.
+            this.personId = pID;
             this.FirstName = firstName;
             this.LastName = lastName;
         }
+        public int PersonID//8d.
+        {
+            get
+            {
+                return personId;
+            }
+        }
+
+
         public string FirstName
         {
             get { return firstName; }
