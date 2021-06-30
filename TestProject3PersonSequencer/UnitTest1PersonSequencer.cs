@@ -1,23 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
 using ConsoleApp1TodoIt.Data;
+using Xunit;
 
-namespace TestProject3PersonSequencer
+namespace TestProject1PersonSequencer
 {
     public class UnitTest1PersonSequencer
     {
         [Fact]
         public void PersonIDTest()
         {
-            var ID = PersonSequencer.nextPersonid();
+            var ID = PersonSequencer.NextPersonId();
             Assert.Equal(1, ID);
         }
         [Fact]
         public void ResetTest()
         {
-            PersonSequencer.reset();
+            PersonSequencer.PersonReset();
         }
     }
 }

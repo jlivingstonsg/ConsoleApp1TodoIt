@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
 using ConsoleApp1TodoIt.Model;
+using Xunit;
 
-namespace TestProject2Todo
+namespace TestProject1Todo
 {
     public class UnitTest1Todo
     {

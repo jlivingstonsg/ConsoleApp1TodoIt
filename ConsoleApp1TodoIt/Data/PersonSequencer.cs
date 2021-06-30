@@ -4,14 +4,14 @@ using System.Text;
 
 namespace ConsoleApp1TodoIt.Data
 {
-    class PersonSequencer
+    public class PersonSequencer
     {
         private static int personId;
-        public static int nextPersonId()
+        public static int NextPersonId()
         {
             return personId = +1;
         }
-        public static void reset()
+        public static void PersonReset()
         {
             personId = 0;
         }
