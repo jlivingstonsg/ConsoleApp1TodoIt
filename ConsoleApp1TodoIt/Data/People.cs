@@ -34,7 +34,7 @@ namespace ConsoleApp1TodoIt.Data
         //-------------------------------
         public Person AddPerson(string Fname, string Lname)//8e
         {
-            var size = Size();
+            int size = Size();
             size = +1;
             Array.Resize<Person>(ref peoples, size);
             int ID = PersonSequencer.NextPersonId();
@@ -43,9 +43,34 @@ namespace ConsoleApp1TodoIt.Data
             return p;
         }
         //----------------------------------
-        public void Clear()//8f
+
+        public Person[] RemovePerson(int personid)//11 a
+        {
+            int size = 0;
+            Person[] pps = new Person[0];
+            //Here we run a foreach loop on peoples array
+            foreach (var p in peoples)
+            {
+                //Then we compare our wanted ID with every persons ID
+                if (p.PersonID != personid)
+                {
+                    //if its not found then it will be stored in pps array
+                    size = size + 1;
+                    Array.Resize<Person>(ref pps, size);
+                    pps[size - 1] = p;
+                }
+            }
+            //Now we copy pps array to peoples array
+            Array.Copy(pps, peoples, size);
+            //returning pps array
+            return pps;
+        }
+
+        //----------------------------------------
+        public void Clear()//-------- 8f
         {
             peoples = new Person[0];
         }
+
     }
 }

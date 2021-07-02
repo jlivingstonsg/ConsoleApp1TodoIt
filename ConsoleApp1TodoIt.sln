@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1PersonSequencer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1TodoSequencer", "TestProject1TodoSequencer\TestProject1TodoSequencer.csproj", "{924E0A50-E563-4274-99B7-8E73BFEE7061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1People", "TestProject1People\TestProject1People.csproj", "{09B8F792-69E8-4660-BEA9-DF8347FB82AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1People", "TestProject1People\TestProject1People.csproj", "{09B8F792-69E8-4660-BEA9-DF8347FB82AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1TodoItems", "TestProject1TodoItems\TestProject1TodoItems.csproj", "{233F7FD9-D9DA-4C20-B1D8-768C26661972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{09B8F792-69E8-4660-BEA9-DF8347FB82AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B8F792-69E8-4660-BEA9-DF8347FB82AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B8F792-69E8-4660-BEA9-DF8347FB82AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233F7FD9-D9DA-4C20-B1D8-768C26661972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233F7FD9-D9DA-4C20-B1D8-768C26661972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233F7FD9-D9DA-4C20-B1D8-768C26661972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233F7FD9-D9DA-4C20-B1D8-768C26661972}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

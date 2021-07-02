@@ -17,6 +17,52 @@ namespace ConsoleApp1TodoIt.Model
             this.todoId = todoId;
             this.description = description;
         }
+        //--------------------------
+        public int todoID
+        {
+            get
+            {
+                return todoId;
+            }
+        }
+        //----------------------------
+        public bool Done
+        {
+            get
+            {
+                return done;
+            }
+            set
+            {
+                done = value;
+            }
+        }
+        //--------------------------
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
+        //---------------------------------
+        public Person Assignee
+        {
+            get
+            {
+                return assignee;
+            }
+            set
+            {
+                assignee = value;
+            }
+        }
+
+
 
     }
 
