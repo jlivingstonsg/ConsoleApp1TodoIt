@@ -146,7 +146,7 @@ namespace ConsoleApp1TodoIt
                         Console.WriteLine("Enter The Todo Item's ID To Find That Todo Item");
                         ID = Convert.ToInt32(Console.ReadLine());
                         Todo tById = t.FindByID(ID);
-                        if (tById.todoID == 0)
+                        if (tById.TodoID == 0)
                         {
                             Console.WriteLine("Person Does Not Exist In The List.");
                             Console.WriteLine("Press Anything To Continue To Menu");
@@ -176,7 +176,7 @@ namespace ConsoleApp1TodoIt
                             {
                                 assigFname = d.Assignee.FirstName;
                             }
-                            string id = Convert.ToString(d.todoID);
+                            string id = Convert.ToString(d.TodoID);
                             Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, assigFname);
                         }
                         Console.WriteLine("Press Enter To Continue To Menu");
@@ -213,7 +213,7 @@ namespace ConsoleApp1TodoIt
                         Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
                         foreach (var d in td)
                         {
-                            string id = Convert.ToString(d.todoID);
+                            string id = Convert.ToString(d.TodoID);
                             Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
                         }
                         Console.WriteLine("Press Enter To Continue To Menu");
@@ -228,7 +228,7 @@ namespace ConsoleApp1TodoIt
                         Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
                         foreach (var d in td)
                         {
-                            string id = Convert.ToString(d.todoID);
+                            string id = Convert.ToString(d.TodoID);
                             Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
                         }
                         Console.WriteLine("Press Enter To Continue To Menu");
@@ -247,7 +247,7 @@ namespace ConsoleApp1TodoIt
                         Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
                         foreach (var d in td)
                         {
-                            string id = Convert.ToString(d.todoID);
+                            string id = Convert.ToString(d.TodoID);
                             Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
                         }
                         Console.WriteLine("Press Enter To Continue To Menu");
@@ -258,7 +258,7 @@ namespace ConsoleApp1TodoIt
                         Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
                         foreach (var d in td)
                         {
-                            string id = Convert.ToString(d.todoID);
+                            string id = Convert.ToString(d.TodoID);
                             Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, "UnAssigned");
                         }
                         Console.WriteLine("Press Enter To Continue To Menu");
@@ -287,7 +287,7 @@ namespace ConsoleApp1TodoIt
                         Console.WriteLine("Enter The Todo Item's ID To Delete That Todo Item");
                         ID = Convert.ToInt32(Console.ReadLine());
                         tById = t.FindByID(ID);
-                        if (tById.todoID == 0)
+                        if (tById.TodoID == 0)
                         {
                             Console.WriteLine("Todo Item Does Not Exist In The List. Please Enter Correct ID");
                             Console.WriteLine("Press Anything To Continue To Menu");

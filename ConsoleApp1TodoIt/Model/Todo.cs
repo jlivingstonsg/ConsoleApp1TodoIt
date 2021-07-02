@@ -6,7 +6,7 @@ namespace ConsoleApp1TodoIt.Model
 {
     public class Todo
     {
-        readonly  int todoId;
+        readonly int todoId;
         string description;
         bool done;
         Person assignee;
@@ -18,7 +18,7 @@ namespace ConsoleApp1TodoIt.Model
             this.description = description;
         }
         //--------------------------
-        public int todoID
+        public int TodoID
         {
             get
             {

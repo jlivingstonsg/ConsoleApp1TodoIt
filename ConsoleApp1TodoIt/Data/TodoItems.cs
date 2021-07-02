@@ -24,7 +24,7 @@ namespace ConsoleApp1TodoIt.Data
             Todo todo = new Todo(0, "MM");
             foreach (var p in todoitems)
             {
-                if (p.todoID == todoid)
+                if (p.TodoID == todoid)
                 {
                     return p;
                 }
@@ -35,7 +35,7 @@ namespace ConsoleApp1TodoIt.Data
         public Todo AddTodo(string Desc, bool status, Person pi)
         {
             int size = Size();
-            size = size + 1;
+            size++;
             Array.Resize<Todo>(ref todoitems, size);
             int ID = TodoSequencer.NextTodoId();
             Todo p = new Todo(ID, Desc);
@@ -60,7 +60,7 @@ namespace ConsoleApp1TodoIt.Data
             {
                 if (t.Done == doneStatus)
                 {
-                    size = size + 1;
+                    size++;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
@@ -76,7 +76,7 @@ namespace ConsoleApp1TodoIt.Data
             {
                 if (t.Assignee.PersonID == personid)
                 {
-                    size = size + 1;
+                    size++;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
@@ -94,7 +94,7 @@ namespace ConsoleApp1TodoIt.Data
                 if ((t.Assignee.FirstName == assignee.FirstName)
                     && (t.Assignee.LastName == assignee.LastName))
                 {
-                    size = size + 1;
+                    size++;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
@@ -110,7 +110,7 @@ namespace ConsoleApp1TodoIt.Data
                 //To check if this person is same as we want, we compare its ID, FirstName and LastName
                 if (t.Assignee == null)
                 {
-                    size = size + 1;
+                    size++;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
@@ -125,10 +125,10 @@ namespace ConsoleApp1TodoIt.Data
             foreach (var p in todoitems)
             {
                 //Then we compare our wanted ID with every Todo ID
-                if (p.todoID != todoid)
+                if (p.TodoID != todoid)
                 {
                     //if its not found then it will be stored in TD array
-                    size = size + 1;
+                    size++;
                     Array.Resize<Todo>(ref TD, size);
                     TD[size - 1] = p;
                 }

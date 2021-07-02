@@ -35,16 +35,18 @@ namespace TestProject1TodoItems
             p.AddTodo("mm", true, pr);
             //Then we test to find it by giving its ID
             Todo ps = p.FindByID(ID);
-            Assert.Equal(1, ps.todoID);
+            Assert.Equal(1, ps.TodoID);
         }
+        //------------------------------------------------------
         [Theory]
         [InlineData("Todo 1")]
         public void AddTest(string Desc)
         {
             Person pr = new Person(1, "dd", "ee");
             Todo ps = p.AddTodo(Desc, true, pr);
-            Assert.Equal(1, ps.todoID);
+            Assert.Equal(1, ps.TodoID);
         }
+        //-----------------------------------
         [Theory]
         [InlineData(true)]
         public void FindByDoneStatusTest(bool s)
@@ -139,7 +141,7 @@ namespace TestProject1TodoItems
             foreach (var c in t)
             {
                 //Now we verify/test if the returned array have all and only todoitems of ID except 1, meaning  1 is removed or not.
-                if (c.todoID == 1)
+                if (c.TodoID == 1)
                 {
                     actualresult = false;
                     break;

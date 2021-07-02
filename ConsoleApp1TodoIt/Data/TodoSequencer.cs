@@ -9,7 +9,7 @@ namespace ConsoleApp1TodoIt.Data
         private static int todoId;
         public static int NextTodoId()
         {
-            return todoId = +1;
+            return todoId++;
         }
         public static void TodoReset()
         {

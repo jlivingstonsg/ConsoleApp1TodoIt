@@ -9,7 +9,7 @@ namespace ConsoleApp1TodoIt.Data
         private static int personId;
         public static int NextPersonId()
         {
-            return personId = +1;
+            return personId++;
         }
         public static void PersonReset()
         {

@@ -20,7 +20,7 @@ namespace ConsoleApp1TodoIt.Data
         //-----------------------------------------
         public Person FindByID(int personid)//8d
         {
-            Person person = new Person(1, "", "");
+            Person person = new Person(1, "_", "_");
             foreach (var p in peoples)
             {
                 if (p.PersonID == personid)
@@ -55,7 +55,7 @@ namespace ConsoleApp1TodoIt.Data
                 if (p.PersonID != personid)
                 {
                     //if its not found then it will be stored in pps array
-                    size = size + 1;
+                    size++;
                     Array.Resize<Person>(ref pps, size);
                     pps[size - 1] = p;
                 }
