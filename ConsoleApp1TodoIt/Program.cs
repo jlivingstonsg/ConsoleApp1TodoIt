@@ -63,6 +63,7 @@ namespace ConsoleApp1TodoIt
                             if (pById.PersonID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.");
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Press Anything To Continue To Menu");
                                 Console.ReadLine();
                             }
@@ -70,6 +71,7 @@ namespace ConsoleApp1TodoIt
                             {
                                 Console.WriteLine("ID. First Name. Last Name");
                                 Console.WriteLine("{0}   {1}          {2}", ID, pById.FirstName, pById.LastName);
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Press Enter To Continue To Menu");
                                 Console.ReadLine();
                             }
@@ -83,6 +85,7 @@ namespace ConsoleApp1TodoIt
                                 string id = Convert.ToString(d.PersonID);
                                 Console.WriteLine("{0}   {1}          {2}", id, d.FirstName, d.LastName);
                             }
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
@@ -90,6 +93,7 @@ namespace ConsoleApp1TodoIt
                         case 4:
                             string Size = Convert.ToString(p.Size());
                             Console.WriteLine("The Number of People is:{0}", Size);
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
@@ -97,6 +101,8 @@ namespace ConsoleApp1TodoIt
                         case 5:
                             p.Clear();
                             Console.WriteLine("Deleted\nPress Enter To Continue To Menu");
+                            Console.WriteLine("--------------------------------------------------- ");
+
                             Console.ReadLine();
                             break;
 
@@ -123,6 +129,7 @@ namespace ConsoleApp1TodoIt
                                     donestatus = false;
                                 }
                                 t.AddTodo(desc, donestatus, null);
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Todo Item Added\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
                             }
@@ -141,6 +148,7 @@ namespace ConsoleApp1TodoIt
                                     donestatus = false;
                                 }
                                 t.AddTodo(desc, donestatus, pById);
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Todo Item Added\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
                                 //Console.ReadLine();
@@ -154,6 +162,7 @@ namespace ConsoleApp1TodoIt
                             if (tById.TodoID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.");
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Press Anything To Continue To Menu");
                                 Console.ReadLine();
                             }
@@ -162,6 +171,7 @@ namespace ConsoleApp1TodoIt
                                 string status = Convert.ToString(tById.Done);
                                 Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
                                 Console.WriteLine("{0}   {1}           {2}             {3}", ID, tById.Description, status, tById.Assignee.FirstName);
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Press Enter To Continue To Menu");
                                 Console.ReadLine();
                             }
@@ -184,6 +194,7 @@ namespace ConsoleApp1TodoIt
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, assigFname);
                             }
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
@@ -191,12 +202,14 @@ namespace ConsoleApp1TodoIt
                         case 9:
                             Size = Convert.ToString(t.Size());
                             Console.WriteLine("The Number of Todo Items is:{0}", Size);
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
                         //Task 9 f.    
                         case 10:
                             t.Clear();
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Deleted\nPress Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
@@ -221,6 +234,7 @@ namespace ConsoleApp1TodoIt
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
                             }
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
@@ -236,6 +250,7 @@ namespace ConsoleApp1TodoIt
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
                             }
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
@@ -266,6 +281,7 @@ namespace ConsoleApp1TodoIt
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, "UnAssigned");
                             }
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
                             Console.ReadLine();
                             break;
@@ -283,6 +299,7 @@ namespace ConsoleApp1TodoIt
                             else
                             {
                                 p.RemovePerson(ID);
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Deleted.\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
                             }
@@ -295,12 +312,14 @@ namespace ConsoleApp1TodoIt
                             if (tById.TodoID == 0)
                             {
                                 Console.WriteLine("Todo Item Does Not Exist In The List. Please Enter Correct ID");
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Press Anything To Continue To Menu");
                                 Console.ReadLine();
                             }
                             else
                             {
                                 t.RemoveTodo(ID);
+                                Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Deleted.\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
                             }
@@ -309,12 +328,14 @@ namespace ConsoleApp1TodoIt
                             Run = false;
                             break;
                         default:
+                            Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Wrong Choice, Press Enter To Continue To Menu");
                             Console.ReadLine();
                         break;
 
                     } //  switch (choice)
                     Console.ResetColor();
+                    Console.WriteLine("--------------------------------------------------- ");
                     Console.WriteLine(" Hit any key to continue!");
                     Console.ReadKey();
                     Console.Clear();
@@ -323,6 +344,7 @@ namespace ConsoleApp1TodoIt
                 catch
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("--------------------------------------------------- ");
                     Console.WriteLine(" 2. That is not a valid input!");
                     Console.ResetColor();
                 }

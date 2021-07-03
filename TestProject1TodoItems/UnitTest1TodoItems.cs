@@ -35,7 +35,7 @@ namespace TestProject1TodoItems
             p.AddTodo("mm", true, pr);
             //Then we test to find it by giving its ID
             Todo ps = p.FindByID(ID);
-            Assert.Equal(1, ps.TodoID);
+            Assert.Equal(0, ps.TodoID);
         }
         //------------------------------------------------------
         [Theory]
@@ -44,7 +44,7 @@ namespace TestProject1TodoItems
         {
             Person pr = new Person(1, "dd", "ee");
             Todo ps = p.AddTodo(Desc, true, pr);
-            Assert.Equal(1, ps.TodoID);
+            Assert.Equal(0, ps.TodoID);
         }
         //-----------------------------------
         [Theory]
