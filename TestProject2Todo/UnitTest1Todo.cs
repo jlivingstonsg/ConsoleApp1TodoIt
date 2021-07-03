@@ -10,6 +10,8 @@ namespace TestProject1Todo
         public void NormalTest(int todoid, string description)
         {
             Todo t1 = new Todo(todoid, description);
+            Assert.Equal("Commit Changes", t1.Description);
+            Assert.Equal(1 , t1.TodoID);
         }
     }
 }

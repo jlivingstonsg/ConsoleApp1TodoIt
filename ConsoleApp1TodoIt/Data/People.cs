@@ -35,7 +35,7 @@ namespace ConsoleApp1TodoIt.Data
         public Person AddPerson(string Fname, string Lname)//8e
         {
             int size = Size();
-            size = +1;
+            ++size;
             Array.Resize<Person>(ref peoples, size);
             int ID = PersonSequencer.NextPersonId();
             Person p = new Person(ID, Fname, Lname);
@@ -55,7 +55,7 @@ namespace ConsoleApp1TodoIt.Data
                 if (p.PersonID != personid)
                 {
                     //if its not found then it will be stored in pps array
-                    size++;
+                    ++size;
                     Array.Resize<Person>(ref pps, size);
                     pps[size - 1] = p;
                 }

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace ConsoleApp1TodoIt.Model
 {
-    public class Todo
+    public class Todo//----- 4a 
     {
         readonly int todoId;
         string description;
         bool done;
         Person assignee;
-
+        //------------------- 4b
         public Todo(int todoId, string description)
         {
             //Initializing/creating object.

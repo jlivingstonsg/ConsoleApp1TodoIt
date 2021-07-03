@@ -6,17 +6,20 @@ namespace ConsoleApp1TodoIt.Model
 {
     public class Person
     {
+        //Task 3a
         readonly int personId;
         string firstName;
         string lastName;
-        public Person(int pID, string firstName, string lastName)//8d.
+        //Task 3b
+        public Person(int pID, string firstName, string lastName)
         {
             //Initializing/creating object.
             this.personId = pID;
+            // after Task 3c
             this.FirstName = firstName;
             this.LastName = lastName;
         }
-        public int PersonID//8d.
+        public int PersonID
         {
             get
             {
@@ -24,7 +27,7 @@ namespace ConsoleApp1TodoIt.Model
             }
         }
 
-
+        //Task 3c
         public string FirstName
         {
             get { return firstName; }
@@ -52,10 +55,6 @@ namespace ConsoleApp1TodoIt.Model
             }
         }
     }
-
-
-
-
 
 
 }
