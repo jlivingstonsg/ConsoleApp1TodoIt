@@ -10,6 +10,7 @@ namespace ConsoleApp1TodoIt.Model
         readonly int personId;
         string firstName;
         string lastName;
+
         //Task 3b
         public Person(int pID, string firstName, string lastName)
         {
@@ -19,6 +20,7 @@ namespace ConsoleApp1TodoIt.Model
             this.FirstName = firstName;
             this.LastName = lastName;
         }
+
         public int PersonID
         {
             get

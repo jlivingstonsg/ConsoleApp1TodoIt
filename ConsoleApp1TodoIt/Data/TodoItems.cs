@@ -8,34 +8,37 @@ namespace ConsoleApp1TodoIt.Data
 {
     public class TodoItems
     {
-        static Todo[] todoitems = new Todo[0];//9
+        //Task 9 a
+        static Todo[] todoitems = new Todo[0];
+        //Task 9 b
         public int Size()
         {
             return todoitems.Length;
         }
-        //---------------------------------
+        //Task 9 c
         public Todo[] FindAll()
         {
             return todoitems;
         }
-        //----------------------------------
+        //Task 9 d
         public Todo FindByID(int todoid)
         {
             Todo todo = new Todo(0, "MM");
             foreach (var p in todoitems)
             {
-                if (p.TodoID == todoid)
+                if (p.todoID == todoid)
                 {
                     return p;
                 }
+
             }
             return todo;
         }
-        //---------------------------
+        //Task 9 e
         public Todo AddTodo(string Desc, bool status, Person pi)
         {
             int size = Size();
-            size++;
+            ++size;
             Array.Resize<Todo>(ref todoitems, size);
             int ID = TodoSequencer.NextTodoId();
             Todo p = new Todo(ID, Desc);
@@ -44,13 +47,13 @@ namespace ConsoleApp1TodoIt.Data
             todoitems[size - 1] = p;
             return p;
         }
-        //--------------------------------
+        //Task 9 f
         public void Clear()
         {
             todoitems = new Todo[0];
         }
-        //----------------------------------------
-        public Todo[] FindByDoneStatus(bool doneStatus)//10a
+        //Task 10 a
+        public Todo[] FindByDoneStatus(bool doneStatus)
         {
             //here we take new size variable for a new Todo array
             //in which the matching done status items will  be stored
@@ -60,15 +63,15 @@ namespace ConsoleApp1TodoIt.Data
             {
                 if (t.Done == doneStatus)
                 {
-                    size++;
+                    ++size;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
             }
             return ti;
         }
-        //----------------------------------------
-        public Todo[] FindByAssignee(int personid)//10b
+        //Task 10 b
+        public Todo[] FindByAssignee(int personid)
         {
             int size = 0;
             Todo[] ti = new Todo[0];
@@ -76,15 +79,15 @@ namespace ConsoleApp1TodoIt.Data
             {
                 if (t.Assignee.PersonID == personid)
                 {
-                    size++;
+                    ++size;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
             }
             return ti;
         }
-        //-------------------------------------------
-        public Todo[] FindByAssignee(Person assignee)//10c
+        //Task 10 c
+        public Todo[] FindByAssignee(Person assignee)
         {
             int size = 0;
             Todo[] ti = new Todo[0];
@@ -94,14 +97,15 @@ namespace ConsoleApp1TodoIt.Data
                 if ((t.Assignee.FirstName == assignee.FirstName)
                     && (t.Assignee.LastName == assignee.LastName))
                 {
-                    size++;
+                    ++size;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
             }
             return ti;
         }
-        public Todo[] FindUnassignedTodoItems()//10 d
+        //Task 10 d
+        public Todo[] FindUnassignedTodoItems()
         {
             int size = 0;
             Todo[] ti = new Todo[0];
@@ -110,13 +114,14 @@ namespace ConsoleApp1TodoIt.Data
                 //To check if this person is same as we want, we compare its ID, FirstName and LastName
                 if (t.Assignee == null)
                 {
-                    size++;
+                    ++size;
                     Array.Resize<Todo>(ref ti, size);
                     ti[size - 1] = t;
                 }
             }
             return ti;
         }
+        //Task 11 a2
         public Todo[] RemoveTodo(int todoid)//11 a
         {
             int size = 0;
@@ -125,10 +130,10 @@ namespace ConsoleApp1TodoIt.Data
             foreach (var p in todoitems)
             {
                 //Then we compare our wanted ID with every Todo ID
-                if (p.TodoID != todoid)
+                if (p.todoID != todoid)
                 {
                     //if its not found then it will be stored in TD array
-                    size++;
+                    ++size;
                     Array.Resize<Todo>(ref TD, size);
                     TD[size - 1] = p;
                 }

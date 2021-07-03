@@ -4,28 +4,30 @@ using System.Text;
 
 namespace ConsoleApp1TodoIt.Model
 {
-    public class Todo//----- 4a 
+    public class Todo
     {
-        readonly int todoId;
+        //Task 4 a
+        readonly int todoid;
         string description;
         bool done;
         Person assignee;
-        //------------------- 4b
-        public Todo(int todoId, string description)
+        //Task 4 b
+        public Todo(int todoid, string description)
         {
-            //Initializing/creating object.
-            this.todoId = todoId;
+            this.todoid = todoid;
             this.description = description;
         }
-        //--------------------------
-        public int TodoID
+        
+        public int todoID
         {
             get
             {
-                return todoId;
+                return todoid;
             }
         }
-        //----------------------------
+        
+        public int TodoID { get; internal set; }
+
         public bool Done
         {
             get
@@ -37,7 +39,6 @@ namespace ConsoleApp1TodoIt.Model
                 done = value;
             }
         }
-        //--------------------------
         public string Description
         {
             get
@@ -49,7 +50,6 @@ namespace ConsoleApp1TodoIt.Model
                 description = value;
             }
         }
-        //---------------------------------
         public Person Assignee
         {
             get
@@ -61,9 +61,5 @@ namespace ConsoleApp1TodoIt.Model
                 assignee = value;
             }
         }
-
-
-
     }
-
 }

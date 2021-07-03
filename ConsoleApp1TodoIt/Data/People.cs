@@ -7,44 +7,57 @@ namespace ConsoleApp1TodoIt.Data
 {
     public class People
     {
-        static Person[] peoples = new Person[0];//8a
-        public int Size()//8b
+        //Task 8 a
+        static Person[] peoples = new Person[0];
+        //Task 8 b
+        public int Size()
         {
             return peoples.Length;
         }
-        //----------------------------------
-        public Person[] FindAll()//8c
+        //Task 8 c
+        public Person[] FindAll()
         {
             return peoples;
         }
-        //-----------------------------------------
-        public Person FindByID(int personid)//8d
+        //Task 8 d
+        public Person FindByID(int PersonID)
         {
-            Person person = new Person(1, "_", "_");
+            //We are taking this person because we have to return something at the end if our wanted person is not found
+            //To know whether the function returned the person we wanted or this new one, we are setting its ID to 0
+            //Because all other persons ID will start form one and we will know if its zero than not found, else if its greater than
+            //zero, its found
+            Person person = new Person(0, "_", "_");
+            //Here we run a foreach loop on peoples array
             foreach (var p in peoples)
             {
-                if (p.PersonID == personid)
+                //Then we compare our wanted ID with every persons ID
+                if (p.PersonID == PersonID)
                 {
-                    person = p;
+                    //if its found then it will be returned
+                    return p;
                 }
-
             }
+            //else the 0 ID person we created will be returned
             return person;
         }
-        //-------------------------------
-        public Person AddPerson(string Fname, string Lname)//8e
+        //Task 8 e
+        public Person AddPerson(string Fname, string Lname)
         {
             int size = Size();
             ++size;
-            Array.Resize<Person>(ref peoples, size);
+            Array.Resize(ref peoples, size);
             int ID = PersonSequencer.NextPersonId();
-            Person p = new Person(ID, Fname, Lname);
-            peoples[size - 1] = p;
-            return p;
+            Person person = new Person(ID, Fname, Lname);
+            peoples[size - 1] = person;
+            return person;
         }
-        //----------------------------------
-
-        public Person[] RemovePerson(int personid)//11 a
+        //Task 8 f
+        public void Clear()
+        {
+            peoples = new Person[0];
+        }
+        //Task 11 a
+        public Person[] RemovePerson(int personid)
         {
             int size = 0;
             Person[] pps = new Person[0];
@@ -60,17 +73,12 @@ namespace ConsoleApp1TodoIt.Data
                     pps[size - 1] = p;
                 }
             }
+            Clear();
+            Array.Resize<Person>(ref peoples, size);
             //Now we copy pps array to peoples array
             Array.Copy(pps, peoples, size);
             //returning pps array
             return pps;
         }
-
-        //----------------------------------------
-        public void Clear()//-------- 8f
-        {
-            peoples = new Person[0];
-        }
-
     }
 }

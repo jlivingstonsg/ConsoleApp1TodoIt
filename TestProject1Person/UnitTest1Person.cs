@@ -6,7 +6,7 @@ using Xunit;
 
 namespace TestProject1Person
 {
-    public class PersonTest//--- 3.d 
+    public class PersonTest //--- 3.d 
     {
         [Theory]
         [InlineData(1, null, null)]
@@ -21,6 +21,7 @@ namespace TestProject1Person
                 Assert.Equal("Empty or only whitespace is not allowed.", ex.Message);
             }
         }
+
         // assign any values to properties and check if they are being stored
         [Theory]
         [InlineData(1, "Magnus", "Ivarsson")]
