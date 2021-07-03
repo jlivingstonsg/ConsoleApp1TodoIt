@@ -18,7 +18,7 @@ namespace TestProject1People
         {
             people.AddPerson("MM", "ff");
             Person ps = people.FindByID(ID);
-            Assert.Equal(0, ps.PersonID);
+            Assert.Equal(1, ps.PersonID);
         }
 
         //Task 8 b
