@@ -7,10 +7,10 @@ namespace ConsoleApp1TodoIt.Model
     public class Todo
     {
         //Task 4 a
-        readonly int todoid;
-        string description;
-        bool done;
-        Person assignee;
+        private readonly int todoid;
+        private string description;
+        private bool done;
+        private Person assignee;
         //Task 4 b
         public Todo(int todoid, string description)
         {
@@ -25,18 +25,7 @@ namespace ConsoleApp1TodoIt.Model
                 return todoid;
             }
         }
-        
-        public bool Done
-        {
-            get
-            {
-                return done;
-            }
-            set
-            {
-                done = value;
-            }
-        }
+
         public string Description
         {
             get
@@ -48,6 +37,19 @@ namespace ConsoleApp1TodoIt.Model
                 description = value;
             }
         }
+
+        public bool Done
+        {
+            get
+            {
+                return done;
+            }
+            set
+            {
+                done = value;
+            }
+        }
+ 
         public Person Assignee
         {
             get

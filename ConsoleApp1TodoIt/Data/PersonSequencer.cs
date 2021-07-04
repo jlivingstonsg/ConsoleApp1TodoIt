@@ -7,7 +7,7 @@ namespace ConsoleApp1TodoIt.Data
     public class PersonSequencer
     {
         //Task 6 a
-        static int personId;
+        private static int personId;
 
         //Task 6 b
         public static int NextPersonId()

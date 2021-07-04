@@ -9,7 +9,7 @@ namespace ConsoleApp1TodoIt.Data
     public class TodoItems
     {
         //Task 9 a
-        static Todo[] todoitems = new Todo[0];
+        private static Todo[] todoitems = new Todo[0];
         //Task 9 b
         public int Size()
         {

@@ -30,6 +30,9 @@ namespace TestProject1TodoItems
         [InlineData(1)]
         public void FindByIDTest(int ID)
         {
+            //TodoItems.Clear();
+            TodoSequencer.Reset();
+
             Person pr = new Person(1, "dd", "ee");
             //To test find by ID, we first store a todo item
             p.AddTodo("mm", true, pr);
@@ -71,6 +74,9 @@ namespace TestProject1TodoItems
         [InlineData(1)]
         public void FindByAssignee(int ID)
         {
+            
+            
+                        
             bool actualresult = false;
             Person pr = new Person(1, "dd", "ee");
             p.AddTodo("DDD", true, pr);
@@ -92,6 +98,8 @@ namespace TestProject1TodoItems
         [Fact]
         public void FindByAssigneeTest()
         {
+            
+            
             bool actualresult = false;
             Person pr = new Person(1, "dd", "ee");
             //Here we add a person first in the Todo array

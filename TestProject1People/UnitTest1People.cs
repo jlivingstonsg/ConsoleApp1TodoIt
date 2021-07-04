@@ -16,6 +16,8 @@ namespace TestProject1People
         [InlineData(1)]
         public void FindByIDTest(int ID)
         {
+            people.Clear();
+            PersonSequencer.Reset();
             people.AddPerson("MM", "ff");
             Person ps = people.FindByID(ID);
             Assert.Equal(1, ps.PersonID);
@@ -42,6 +44,8 @@ namespace TestProject1People
         [InlineData("Magnus", "Ivarson")]
         public void AddTest(string Fname, string Lname)
         {
+            people.Clear();
+            PersonSequencer.Reset();
             Person ps = people.AddPerson(Fname, Lname);
             Assert.Equal(1, ps.PersonID);
 

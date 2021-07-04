@@ -11,13 +11,14 @@ namespace TestProject1TodoSequencer
         [Fact]
         public void TodoIDTest()
         {
+            TodoSequencer.Reset();
             var ID = TodoSequencer.NextTodoId();
             Assert.Equal(1, ID);
         }
         [Fact]
         public void ResetTest()
         {
-            TodoSequencer.TodoReset();
+            TodoSequencer.Reset();
         }
     }
 }

@@ -7,14 +7,14 @@ namespace ConsoleApp1TodoIt.Data
     public class TodoSequencer
     {
         //Task 7 a.
-        static int TodoId;
+        private static int TodoId;
         //Task 7 b.
         public static int NextTodoId()
         {
             return ++TodoId;
         }
         //Task 7 c.
-        public static void TodoReset()
+        public static void Reset()
         {
             TodoId = 0;
         }

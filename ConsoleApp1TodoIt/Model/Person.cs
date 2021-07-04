@@ -7,9 +7,9 @@ namespace ConsoleApp1TodoIt.Model
     public class Person
     {
         //Task 3a
-        readonly int personId;
-        string firstName;
-        string lastName;
+        private readonly int personId;
+        private string firstName;
+        private string lastName;
 
         //Task 3b
         public Person(int pID, string firstName, string lastName)
