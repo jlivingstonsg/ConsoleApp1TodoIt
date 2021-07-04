@@ -12,7 +12,7 @@ namespace ConsoleApp1TodoIt
         {
             
 
-            People p = new People();
+            People people = new People();
             TodoItems t = new TodoItems();
 
             bool Run = true;
@@ -53,13 +53,13 @@ namespace ConsoleApp1TodoIt
                             string Fn = Console.ReadLine();
                             Console.WriteLine("Enter last Name");
                             string Ln = Console.ReadLine();
-                            p.AddPerson(Fn, Ln);
+                            people.AddPerson(Fn, Ln);
                             break;
                         //Task 8 d.
                         case 2:
                             Console.WriteLine("Enter The Person's ID To Find That Person");
                             int ID = Convert.ToInt32(Console.ReadLine());
-                            Person pById = p.FindByID(ID);
+                            Person pById = people.FindByID(ID);
                             if (pById.PersonID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.");
@@ -78,7 +78,7 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 8 c.
                         case 3:
-                            Person[] people = p.FindAll();
+                            Person[] people = people.FindAll();
                             Console.WriteLine("ID. First Name. Last Name");
                             foreach (var d in people)
                             {
@@ -91,7 +91,7 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 8 b.
                         case 4:
-                            string Size = Convert.ToString(p.Size());
+                            string Size = Convert.ToString(people.Size());
                             Console.WriteLine("The Number of People is:{0}", Size);
                             Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
@@ -99,7 +99,7 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 8 f.    
                         case 5:
-                            p.Clear();
+                            people.Clear();
                             Console.WriteLine("Deleted\nPress Enter To Continue To Menu");
                             Console.WriteLine("--------------------------------------------------- ");
 
@@ -112,7 +112,7 @@ namespace ConsoleApp1TodoIt
                             string desc = Console.ReadLine();
                             Console.WriteLine("Enter Person's ID to Assign Him This Todo Item");
                             ID = Convert.ToInt32(Console.ReadLine());
-                            pById = p.FindByID(ID);
+                            pById = people.FindByID(ID);
                             if (pById.PersonID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.\n Added Null/Blank Assignee To This Task");
@@ -289,7 +289,7 @@ namespace ConsoleApp1TodoIt
                             Console.WriteLine("Note: After Deleting A Person, Its ID will not be re-assigned to new person.");
                             Console.WriteLine("Enter The Person's ID To Delete That Person");
                             ID = Convert.ToInt32(Console.ReadLine());
-                            pById = p.FindByID(ID);
+                            pById = people.FindByID(ID);
                             if (pById.PersonID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List. Please Enter Correct ID");
@@ -298,7 +298,7 @@ namespace ConsoleApp1TodoIt
                             }
                             else
                             {
-                                p.RemovePerson(ID);
+                                people.RemovePerson(ID);
                                 Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Deleted.\nPress Enter To Continue To Menu");
                                 Console.ReadLine();

@@ -28,13 +28,13 @@ namespace ConsoleApp1TodoIt.Data
             //zero, its found
             Person person = new Person(0, "_", "_");
             //Here we run a foreach loop on peoples array
-            foreach (var p in peoples)
+            foreach (var people in peoples)
             {
                 //Then we compare our wanted ID with every persons ID
-                if (p.PersonID == PersonID)
+                if (people.PersonID == PersonID)
                 {
                     //if its found then it will be returned
-                    return p;
+                    return people;
                 }
             }
             //else the 0 ID person we created will be returned
@@ -62,15 +62,15 @@ namespace ConsoleApp1TodoIt.Data
             int size = 0;
             Person[] pps = new Person[0];
             //Here we run a foreach loop on peoples array
-            foreach (var p in peoples)
+            foreach (var people in peoples)
             {
                 //Then we compare our wanted ID with every persons ID
-                if (p.PersonID != personid)
+                if (people.PersonID != personid)
                 {
                     //if its not found then it will be stored in pps array
                     ++size;
                     Array.Resize<Person>(ref pps, size);
-                    pps[size - 1] = p;
+                    pps[size - 1] = people;
                 }
             }
             Clear();

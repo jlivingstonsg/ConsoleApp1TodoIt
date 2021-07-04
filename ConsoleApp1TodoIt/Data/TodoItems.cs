@@ -24,11 +24,11 @@ namespace ConsoleApp1TodoIt.Data
         public Todo FindByID(int todoid)
         {
             Todo todo = new Todo(0, "MM");
-            foreach (var p in todoitems)
+            foreach (var people in todoitems)
             {
-                if (p.TodoID == todoid)
+                if (people.TodoID == todoid)
                 {
-                    return p;
+                    return people;
                 }
 
             }
@@ -41,11 +41,11 @@ namespace ConsoleApp1TodoIt.Data
             ++size;
             Array.Resize<Todo>(ref todoitems, size);
             int ID = TodoSequencer.NextTodoId();
-            Todo p = new Todo(ID, Desc);
-            p.Done = status;
-            p.Assignee = pi;
-            todoitems[size - 1] = p;
-            return p;
+            Todo people = new Todo(ID, Desc);
+            people.Done = status;
+            people.Assignee = pi;
+            todoitems[size - 1] = people;
+            return people;
         }
         //Task 9 f
         public void Clear()
@@ -127,15 +127,15 @@ namespace ConsoleApp1TodoIt.Data
             int size = 0;
             Todo[] TD = new Todo[0];
             //Here we run a foreach loop on todoitems array
-            foreach (var p in todoitems)
+            foreach (var people in todoitems)
             {
                 //Then we compare our wanted ID with every Todo ID
-                if (p.TodoID != todoid)
+                if (people.TodoID != todoid)
                 {
                     //if its not found then it will be stored in TD array
                     ++size;
                     Array.Resize<Todo>(ref TD, size);
-                    TD[size - 1] = p;
+                    TD[size - 1] = people;
                 }
             }
             Clear();
