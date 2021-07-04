@@ -119,7 +119,7 @@ namespace ConsoleApp1TodoIt
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.\n Added Null/Blank Assignee To This Task");
                                 Console.WriteLine("Is This Todo Item Task Completed Or In-Progress ?");
-                                Console.WriteLine("Enter 1 For Yes\n Enter 2 For No");
+                                Console.WriteLine("Enter 1 For Yes \nEnter 2 For No");
                                 int c = Convert.ToInt32(Console.ReadLine());
                                 bool donestatus;
                                 if (c == 1)
@@ -138,7 +138,7 @@ namespace ConsoleApp1TodoIt
                             else
                             {
                                 Console.WriteLine("Is This Todo Item Task Completed Or In-Progress ?");
-                                Console.WriteLine("Enter 1 For Yes\n Enter 2 For No");
+                                Console.WriteLine("Enter 1 For Yes \nEnter 2 For No");
                                 int c = Convert.ToInt32(Console.ReadLine());
                                 bool donestatus;
                                 if (c == 1)
@@ -218,7 +218,7 @@ namespace ConsoleApp1TodoIt
                         //Task 10 a.
                         case 11:
                             Console.WriteLine("Enter The Completed/Status For Which You Want Find Todo Items");
-                            Console.WriteLine("Enter 1 For Completed/Done\n Enter 2 For UnComplete/Not Done");
+                            Console.WriteLine("Enter 1 For Completed/Done \nEnter 2 For UnComplete/Not Done");
                             int WantedStatus = Convert.ToInt32(Console.ReadLine());
                             bool ds;
                             if (WantedStatus == 1)
