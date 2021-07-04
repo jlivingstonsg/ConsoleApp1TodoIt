@@ -18,7 +18,7 @@ namespace ConsoleApp1TodoIt.Model
             this.description = description;
         }
         
-        public int todoID
+        public int TodoID
         {
             get
             {
@@ -26,8 +26,6 @@ namespace ConsoleApp1TodoIt.Model
             }
         }
         
-        public int TodoID { get; internal set; }
-
         public bool Done
         {
             get

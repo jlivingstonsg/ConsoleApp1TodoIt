@@ -44,7 +44,7 @@ namespace TestProject1TodoItems
         {
             Person pr = new Person(1, "dd", "ee");
             Todo ps = p.AddTodo(Desc, true, pr);
-            Assert.Equal(1, ps.todoID);
+            Assert.Equal(1, ps.TodoID);
         }
         //-----------------------------------
         [Theory]
