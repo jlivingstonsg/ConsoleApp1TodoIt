@@ -10,10 +10,10 @@ namespace ConsoleApp1TodoIt
     {
         static void Main(string[] args)
         {
-            
 
-            People people = new People();
-            TodoItems t = new TodoItems();
+
+            People peoplearray = new People();
+            TodoItems todoitemsarray = new TodoItems();
 
             bool Run = true;
             while (Run)
@@ -53,13 +53,13 @@ namespace ConsoleApp1TodoIt
                             string Fn = Console.ReadLine();
                             Console.WriteLine("Enter last Name");
                             string Ln = Console.ReadLine();
-                            people.AddPerson(Fn, Ln);
+                            peoplearray.AddPerson(Fn, Ln);
                             break;
                         //Task 8 d.
                         case 2:
                             Console.WriteLine("Enter The Person's ID To Find That Person");
                             int ID = Convert.ToInt32(Console.ReadLine());
-                            Person pById = people.FindByID(ID);
+                            Person pById = peoplearray.FindByID(ID);
                             if (pById.PersonID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.");
@@ -69,8 +69,9 @@ namespace ConsoleApp1TodoIt
                             }
                             else
                             {
-                                Console.WriteLine("ID. First Name. Last Name");
-                                Console.WriteLine("{0}   {1}          {2}", ID, pById.FirstName, pById.LastName);
+                                Console.WriteLine("--------------------------------------------------- ");
+                                Console.WriteLine("{0}  {1,-20} {2,5}", "ID.", "First Name.", "Last Name.");
+                                Console.WriteLine("{0}    {1,-20} {2}", ID, pById.FirstName, pById.LastName);
                                 Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Press Enter To Continue To Menu");
                                 Console.ReadLine();
@@ -78,12 +79,13 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 8 c.
                         case 3:
-                            Person[] people = people.FindAll();
-                            Console.WriteLine("ID. First Name. Last Name");
-                            foreach (var d in people)
+                            Person[] people = peoplearray.FindAll();
+                            Console.WriteLine("--------------------------------------------------- ");
+                            Console.WriteLine("{0}  {1,-20} {2,5}", "ID.", "First Name.", "Last Name.");
+                            foreach (Person d in people)
                             {
                                 string id = Convert.ToString(d.PersonID);
-                                Console.WriteLine("{0}   {1}          {2}", id, d.FirstName, d.LastName);
+                                Console.WriteLine("{0}    {1,-20} {2}", id, d.FirstName, d.LastName );
                             }
                             Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
@@ -91,7 +93,7 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 8 b.
                         case 4:
-                            string Size = Convert.ToString(people.Size());
+                            string Size = Convert.ToString(peoplearray.Size());
                             Console.WriteLine("The Number of People is:{0}", Size);
                             Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
@@ -99,7 +101,7 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 8 f.    
                         case 5:
-                            people.Clear();
+                            peoplearray.Clear();
                             Console.WriteLine("Deleted\nPress Enter To Continue To Menu");
                             Console.WriteLine("--------------------------------------------------- ");
 
@@ -112,13 +114,13 @@ namespace ConsoleApp1TodoIt
                             string desc = Console.ReadLine();
                             Console.WriteLine("Enter Person's ID to Assign Him This Todo Item");
                             ID = Convert.ToInt32(Console.ReadLine());
-                            pById = people.FindByID(ID);
+                            pById = peoplearray.FindByID(ID);
                             if (pById.PersonID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.\n Added Null/Blank Assignee To This Task");
                                 Console.WriteLine("Is This Todo Item Task Completed Or In-Progress ?");
                                 Console.WriteLine("Enter 1 For Yes\n Enter 2 For No");
-                                var c = Convert.ToInt32(Console.ReadLine());
+                                int c = Convert.ToInt32(Console.ReadLine());
                                 bool donestatus;
                                 if (c == 1)
                                 {
@@ -128,7 +130,7 @@ namespace ConsoleApp1TodoIt
                                 {
                                     donestatus = false;
                                 }
-                                t.AddTodo(desc, donestatus, null);
+                                todoitemsarray.AddTodo(desc, donestatus, null);
                                 Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Todo Item Added\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
@@ -137,7 +139,7 @@ namespace ConsoleApp1TodoIt
                             {
                                 Console.WriteLine("Is This Todo Item Task Completed Or In-Progress ?");
                                 Console.WriteLine("Enter 1 For Yes\n Enter 2 For No");
-                                var c = Convert.ToInt32(Console.ReadLine());
+                                int c = Convert.ToInt32(Console.ReadLine());
                                 bool donestatus;
                                 if (c == 1)
                                 {
@@ -147,7 +149,7 @@ namespace ConsoleApp1TodoIt
                                 {
                                     donestatus = false;
                                 }
-                                t.AddTodo(desc, donestatus, pById);
+                                todoitemsarray.AddTodo(desc, donestatus, pById);
                                 Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Todo Item Added\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
@@ -158,7 +160,7 @@ namespace ConsoleApp1TodoIt
                         case 7:
                             Console.WriteLine("Enter The Todo Item's ID To Find That Todo Item");
                             ID = Convert.ToInt32(Console.ReadLine());
-                            Todo tById = t.FindByID(ID);
+                            Todo tById = todoitemsarray.FindByID(ID);
                             if (tById.TodoID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List.");
@@ -178,11 +180,11 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 9 c.
                         case 8:
-                            Todo[] todoitems = t.FindAll();
+                            Todo[] todoitems = todoitemsarray.FindAll();
                             Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
-                            foreach (var d in todoitems)
+                            foreach (Todo d in todoitems)
                             {
-                                var assigFname = "UnAssigned";
+                                string assigFname = "UnAssigned";
                                 if (d.Assignee == null)
                                 {
                                     assigFname = "UnAssigned";
@@ -200,7 +202,7 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 9 b.
                         case 9:
-                            Size = Convert.ToString(t.Size());
+                            Size = Convert.ToString(todoitemsarray.Size());
                             Console.WriteLine("The Number of Todo Items is:{0}", Size);
                             Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Press Enter To Continue To Menu");
@@ -208,7 +210,7 @@ namespace ConsoleApp1TodoIt
                             break;
                         //Task 9 f.    
                         case 10:
-                            t.Clear();
+                            todoitemsarray.Clear();
                             Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Deleted\nPress Enter To Continue To Menu");
                             Console.ReadLine();
@@ -217,7 +219,7 @@ namespace ConsoleApp1TodoIt
                         case 11:
                             Console.WriteLine("Enter The Completed/Status For Which You Want Find Todo Items");
                             Console.WriteLine("Enter 1 For Completed/Done\n Enter 2 For UnComplete/Not Done");
-                            var WantedStatus = Convert.ToInt32(Console.ReadLine());
+                            int WantedStatus = Convert.ToInt32(Console.ReadLine());
                             bool ds;
                             if (WantedStatus == 1)
                             {
@@ -227,9 +229,9 @@ namespace ConsoleApp1TodoIt
                             {
                                 ds = false;
                             }
-                            Todo[] td = t.FindByDoneStatus(ds);
+                            Todo[] td = todoitemsarray.FindByDoneStatus(ds);
                             Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
-                            foreach (var d in td)
+                            foreach (Todo d in td)
                             {
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
@@ -243,9 +245,9 @@ namespace ConsoleApp1TodoIt
                             Console.WriteLine("Enter The Assignee's ID For Which You Want Find Todo Items");
                             ID = Convert.ToInt32(Console.ReadLine());
 
-                            td = t.FindByAssignee(ID);
+                            td = todoitemsarray.FindByAssignee(ID);
                             Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
-                            foreach (var d in td)
+                            foreach (Todo d in td)
                             {
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
@@ -263,9 +265,9 @@ namespace ConsoleApp1TodoIt
                             //We are entering ID which is just fake and will not be used to search
                             //The search will only be made on First Name and Last Name
                             Person asigne = new Person(1, Fn, Ln);
-                            td = t.FindByAssignee(asigne);
+                            td = todoitemsarray.FindByAssignee(asigne);
                             Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
-                            foreach (var d in td)
+                            foreach (Todo d in td)
                             {
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, d.Assignee.FirstName);
@@ -274,9 +276,9 @@ namespace ConsoleApp1TodoIt
                             Console.ReadLine();
                             break;
                         case 14:
-                            td = t.FindUnassignedTodoItems();
+                            td = todoitemsarray.FindUnassignedTodoItems();
                             Console.WriteLine("ID. Description. Completed Status. Assignee's FirstName");
-                            foreach (var d in td)
+                            foreach (Todo d in td)
                             {
                                 string id = Convert.ToString(d.TodoID);
                                 Console.WriteLine("{0}   {1}           {2}             {3}", id, d.Description, d.Done, "UnAssigned");
@@ -289,7 +291,7 @@ namespace ConsoleApp1TodoIt
                             Console.WriteLine("Note: After Deleting A Person, Its ID will not be re-assigned to new person.");
                             Console.WriteLine("Enter The Person's ID To Delete That Person");
                             ID = Convert.ToInt32(Console.ReadLine());
-                            pById = people.FindByID(ID);
+                            pById = peoplearray.FindByID(ID);
                             if (pById.PersonID == 0)
                             {
                                 Console.WriteLine("Person Does Not Exist In The List. Please Enter Correct ID");
@@ -298,7 +300,7 @@ namespace ConsoleApp1TodoIt
                             }
                             else
                             {
-                                people.RemovePerson(ID);
+                                peoplearray.RemovePerson(ID);
                                 Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Deleted.\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
@@ -308,7 +310,7 @@ namespace ConsoleApp1TodoIt
                             Console.WriteLine("Note: After Deleting A Todo Item, Its ID will not be re-assigned to new Todo Item.");
                             Console.WriteLine("Enter The Todo Item's ID To Delete That Todo Item");
                             ID = Convert.ToInt32(Console.ReadLine());
-                            tById = t.FindByID(ID);
+                            tById = todoitemsarray.FindByID(ID);
                             if (tById.TodoID == 0)
                             {
                                 Console.WriteLine("Todo Item Does Not Exist In The List. Please Enter Correct ID");
@@ -318,7 +320,7 @@ namespace ConsoleApp1TodoIt
                             }
                             else
                             {
-                                t.RemoveTodo(ID);
+                                todoitemsarray.RemoveTodo(ID);
                                 Console.WriteLine("--------------------------------------------------- ");
                                 Console.WriteLine("Deleted.\nPress Enter To Continue To Menu");
                                 Console.ReadLine();
@@ -331,7 +333,7 @@ namespace ConsoleApp1TodoIt
                             Console.WriteLine("--------------------------------------------------- ");
                             Console.WriteLine("Wrong Choice, Press Enter To Continue To Menu");
                             Console.ReadLine();
-                        break;
+                            break;
 
                     } //  switch (choice)
                     Console.ResetColor();
@@ -345,7 +347,8 @@ namespace ConsoleApp1TodoIt
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("--------------------------------------------------- ");
-                    Console.WriteLine(" 2. That is not a valid input!");
+                    Console.WriteLine(" That is not a valid input!  \n Press any key.");
+                    Console.ReadKey();
                     Console.ResetColor();
                 }
 

@@ -86,7 +86,7 @@ namespace TestProject1People
             people.AddPerson("dd", "ee");
             //Then we remove our wanted person by his ID
             Person[] t = people.RemovePerson(1);
-            foreach (var c in t)
+            foreach (Person c in t)
             {
                 //Now we verify/test if the returned array have all and only persons of ID except 1, meaning  1 is removed or not.
                 if (c.PersonID == 1)

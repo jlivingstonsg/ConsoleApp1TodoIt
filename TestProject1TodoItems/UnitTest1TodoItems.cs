@@ -62,7 +62,7 @@ namespace TestProject1TodoItems
             todoItems.AddTodo("DDD", true, pr);
             //Then we find for Todo items which have done status true
             Todo[] t = todoItems.FindByDoneStatus(s);
-            foreach (var c in t)
+            foreach (Todo c in t)
             {
                 //Now we verify/test if the returned array has all and only true done status todo items
                 if (c.Done == s)
@@ -83,7 +83,7 @@ namespace TestProject1TodoItems
             todoItems.AddTodo("DDD", true, pr);
             //Then we find for Todo items which have assignee ID equal to 1
             Todo[] t = todoItems.FindByAssignee(ID);
-            foreach (var c in t)
+            foreach (Todo c in t)
             {
                 //Now we verify/test if the returned array has all and only assignee ID equal to 1 todo items
                 Assert.Equal(1, c.Assignee.PersonID);
@@ -107,7 +107,7 @@ namespace TestProject1TodoItems
             todoItems.AddTodo("DDD", true, pr);
             //Then we find for Todo items which have assignee equal to FBA (Input search data)
             Todo[] t = todoItems.FindByAssignee(FBA);
-            foreach (var c in t)
+            foreach (Todo c in t)
             {
                 //Now we verify/test if the returned array has all and only assignee equal to FBA (Input search data) todo items
                 if ((c.Assignee.FirstName == FBA.FirstName)
@@ -128,7 +128,7 @@ namespace TestProject1TodoItems
             todoItems.AddTodo("DDD", true, null);
             //Then we find for Todo items which have assignee equal to FBA (Input search data)
             Todo[] t = todoItems.FindUnassignedTodoItems();
-            foreach (var c in t)
+            foreach (Todo c in t)
             {
                 //Now we verify/test if the returned array has all and only assignee equal to FBA (Input search data) todo items
                 if (c.Assignee == null)
@@ -147,7 +147,7 @@ namespace TestProject1TodoItems
             todoItems.AddTodo("DDD", true, null);
             //Then we remove our wanted todo by its ID
             Todo[] t = todoItems.RemoveTodo(1);
-            foreach (var c in t)
+            foreach (Todo c in t)
             {
                 //Now we verify/test if the returned array have all and only todoitems of ID except 1, meaning  1 is removed or not.
                 if (c.TodoID == 1)

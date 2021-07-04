@@ -12,7 +12,7 @@ namespace TestProject1TodoSequencer
         public void TodoIDTest()
         {
             TodoSequencer.Reset();
-            var ID = TodoSequencer.NextTodoId();
+            int ID = TodoSequencer.NextTodoId();
             Assert.Equal(1, ID);
         }
         [Fact]

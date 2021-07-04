@@ -28,7 +28,7 @@ namespace ConsoleApp1TodoIt.Data
             //zero, its found
             Person person = new Person(0, "_", "_");
             //Here we run a foreach loop on peoples array
-            foreach (var people in peoples)
+            foreach (Person people in peoples)
             {
                 //Then we compare our wanted ID with every persons ID
                 if (people.PersonID == PersonID)
@@ -62,7 +62,7 @@ namespace ConsoleApp1TodoIt.Data
             int size = 0;
             Person[] pps = new Person[0];
             //Here we run a foreach loop on peoples array
-            foreach (var people in peoples)
+            foreach (Person people in peoples)
             {
                 //Then we compare our wanted ID with every persons ID
                 if (people.PersonID != personid)
