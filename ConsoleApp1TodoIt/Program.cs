@@ -29,7 +29,7 @@ namespace ConsoleApp1TodoIt
                     Console.WriteLine("Enter 4 To Show Number of People");
                     Console.WriteLine("Enter 5 To Delete All Person");
 
-                    Console.WriteLine("Enter 6 To Add A Todo Item");
+                    Console.WriteLine("Enter 6 To Add A Todo Item(ID: 0 as UnAssigned)");
                     Console.WriteLine("Enter 7 To Find A Todo Item By ID");
                     Console.WriteLine("Enter 8 To Show All Todo Item");
                     Console.WriteLine("Enter 9 To Show Number of Todo Items");
