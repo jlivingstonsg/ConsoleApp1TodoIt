@@ -13,17 +13,33 @@ namespace TestProject1TodoItems
         [Fact]
         public void SizeTest()
         {
-            int i = 0;
+            todoItems.Clear();
+            TodoSequencer.Reset();
+            //Expected Value
+            int i = 1;
+
+            //Actual Values
+            todoItems.AddTodo("", false, null);
             int ps = todoItems.Size();
+            //Type Test
             Assert.Equal(i.GetType(), ps.GetType());
+            //Value Test
+            Assert.Equal(i, ps);
         }
         //---------------------------
         [Fact]
         public void FindAllTest()
         {
-            Todo[] peoples = new Todo[0];
+            todoItems.Clear();
+            TodoSequencer.Reset();
+            //Actuall
+            todoItems.AddTodo(" ", false, null);
             Todo[] ps = todoItems.FindAll();
-            Assert.Equal(peoples.GetType(), ps.GetType());
+            //Expected
+            Todo t = new Todo(1, " ");
+            Todo[] todoitems = new Todo[0];
+            Assert.Equal(todoitems.GetType(), ps.GetType());
+            Assert.Equal(t.TodoID, ps[0].TodoID);
         }
         //-------------------------------
         [Theory]
@@ -126,16 +142,44 @@ namespace TestProject1TodoItems
             Person pr = new Person(1, "dd", "ee");
             //Here we add a person first in the Todo array
             todoItems.AddTodo("DDD", true, null);
-            //Then we find for Todo items which have assignee equal to FBA (Input search data)
+            //Retreiving All Null
             Todo[] t = todoItems.FindUnassignedTodoItems();
             foreach (Todo c in t)
             {
-                //Now we verify/test if the returned array has all and only assignee equal to FBA (Input search data) todo items
+                //Checking For Only Null
                 if (c.Assignee == null)
                 {
                     actualresult = true;
                 }
             }
+            Assert.True(actualresult);
+        }
+        //Task 10 d part 2
+        [Fact]
+        public void FindByUnAssignedTodoItemsTest2()
+        {
+            bool actualresult = false;
+            Person pr = new Person(1, "dd", "ee");
+            //Here we add a person first in the Todo array which have a person NotNull
+            todoItems.AddTodo("DDD", true, pr);
+            //Here we add a person first in the Todo array which have a person Null
+            todoItems.AddTodo("DDD", true, null);
+            //Retreiving All Null (which means any TodoItem with person value NotNull wont be retreived)
+            Todo[] t = todoItems.FindUnassignedTodoItems();
+            foreach (var c in t)
+            {
+                //
+                if (c.Assignee == null)
+                {
+                    actualresult = true;
+                }
+                else
+                {
+                    actualresult = false;
+                    break;
+                }
+            }
+            //Here we Test if it really returned an array with Todoitem with a person value Null or not
             Assert.True(actualresult);
         }
         [Fact]
@@ -162,6 +206,7 @@ namespace TestProject1TodoItems
             }
             Assert.True(actualresult);
         }
+
     }
 
 }

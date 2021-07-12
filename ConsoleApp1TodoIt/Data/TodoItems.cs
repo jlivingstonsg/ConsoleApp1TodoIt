@@ -111,7 +111,6 @@ namespace ConsoleApp1TodoIt.Data
             Todo[] ti = new Todo[0];
             foreach (Todo todoitemsarray in todoitems)
             {
-                //To check if this person is same as we want, we compare its ID, FirstName and LastName
                 if (todoitemsarray.Assignee == null)
                 {
                     ++size;
